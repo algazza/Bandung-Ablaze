@@ -2,14 +2,9 @@ import React, { useState } from "react";
 import { illustrasi, image1, styles, video } from "../helper";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 
-const SectionVidBg = ({videoPlay, handleVideoPlay}) => {
+const SectionVidBg = () => {
   return (
     <div
-      style={{
-        background: `${videoPlay == true ? `url(${video})` : ``}`,
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
       className="md:flex relative"
     >
       <div className="relative">
@@ -19,10 +14,9 @@ const SectionVidBg = ({videoPlay, handleVideoPlay}) => {
           className="rounded-tr-[5rem] w-full md:h-[25rem]"
         />
         <div
-          onClick={handleVideoPlay}
           className="absolute rounded-full w-16 h-16 bg-accent top-1/2 -right-8 cursor-pointer opacity-100 flex justify-center items-center"
         >
-          {videoPlay ? <FaRegEyeSlash className="text-[2rem]"/> : <FaRegEye className="text-[2rem]" />}
+          {/* {videoPlay ? <FaRegEyeSlash className="text-[2rem]"/> : <FaRegEye className="text-[2rem]" />} */}
         </div>
       </div>
 

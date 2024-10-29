@@ -10,7 +10,6 @@ import SectionVidBg from "./Section/SectionVidBg.tsx";
 
 const App = () => {
   const [bgColor, setBgColor] = useState("bg-backgroundColor");
-  const [videoPlay, setVideoPlay] = useState(false);
 
   const ref = useRef(null);
   const isInView = useInView(ref, {
@@ -34,10 +33,6 @@ const App = () => {
     };
   }, [isInView]);
 
-  
-  const handleVideoPlay = () => {
-    setVideoPlay(!videoPlay);
-  };
 
   return (
     <div className={`${bgColor} ${styles.fontBody} font-Playfair transition-colors duration-500`}>
@@ -49,7 +44,7 @@ const App = () => {
           </motion.section>
 
           <section className={`${styles.paddingY} px-6 md:px-0`}>
-            <SectionVidBg videoPlay={videoPlay} handleVideoPlay={handleVideoPlay}/>
+            <SectionVidBg/>
           </section>
 
           <section className={`${styles.marginX} ${styles.paddingY}`}>
