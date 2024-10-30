@@ -1,17 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
 import Header from "./components/Header";
-import LandingPage from "./Section/LandingPage.tsx";
+import ParallaxPage from "./Section/ParallaxPage.tsx";
 import ReactLenis from "lenis/react";
 import { motion, useInView } from "framer-motion";
-import RoundedPage from "./Section/RoundedPage.tsx";
-import { image1, image2, styles } from "./helper/index.ts";
-import Horizontal from "./Horizontal.tsx";
-import SecttionRoundLeft from "./Section/SecttionRoundLeft.tsx";
+import FigurePage from "./Section/FigurePage.tsx";
+import { image1, image2, image3, image6, styles } from "./helper/index.ts";
 import SectionRound from "./Section/SectionRound.tsx";
+import ClimaxPage from "./Section/ClimaxPage.tsx";
+import SimplePage from "./Section/SimplePage.tsx";
+import ConclusionPage from "./Section/ConclusionPage.tsx";
+import Preload from "./Section/Preload.tsx";
 
 const App = () => {
   const [bgColor, setBgColor] = useState("bg-backgroundColor");
-
+  const [isLoading, setIsLoading] = useState(true);
   const ref = useRef(null);
   const isInView = useInView(ref, {
     margin: "-400px",
@@ -34,19 +36,34 @@ const App = () => {
     };
   }, [isInView]);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3400);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div
-      className={`${bgColor} ${styles.fontBody} text-textColor font-Playfair transition-colors duration-500`}
+      className={`${bgColor} ${
+        styles.fontBody
+      } text-textColor font-Playfair transition-colors duration-500 ${
+        isLoading ? "overflow-hidden h-screen" : ""
+      }`}
     >
       <ReactLenis root options={{ lerp: 0.095 }}>
         <Header />
-        <main className="py-[6rem]">
-          <section className="">
-            <LandingPage />
+        <main className="">
+          {isLoading && <Preload />}
+          <section className="" id="">
+            <ParallaxPage />
           </section>
 
-          <section className={`${styles.paddingY} px-6 md:px-0`}>
-            <h1 className={`${styles.heading1} text-center`}>Latar Belakang</h1>
+          <section className={`${styles.paddingY} px-6 md:px-0 `} id="story">
+            <h1 className={`${styles.heading1} text-center text-accent`}>
+              Latar Belakang
+            </h1>
 
             <SectionRound
               rowReverse="flex-row-reverse"
@@ -60,7 +77,7 @@ const App = () => {
                 menimbulkan ketegangan antara rakyat Indonesia dan pasukan Sekutu.`}
             />
 
-            <div className="rounded-full border-2 border-textColor p-4 pl-10 bg-backgroundColor w-2/3 mx-auto">
+            <div className="md:rounded-full rounded-[4rem] border-2 border-textColor md:p-4 p-6 md:pl-10 pl-6 bg-backgroundColor md:w-2/3 mx-auto">
               <h1 className={styles.heading4}>02. Dilema Pejuang</h1>
               <p className="mt-2">
                 Pada awal Maret 1946, Sekutu mengeluarkan ultimatum kepada para
@@ -75,7 +92,7 @@ const App = () => {
               imageDocs={image1}
               roundedImg="rounded-tr-[5rem]"
               roundedText="rounded-br-[5rem] right-[8rem]"
-              shadowPlace="bottom-0 -right-12"
+              shadowPlace="bottom-12 right-0"
               title="03. Situasi Pasca-Proklamasi"
               description={`Setelah Proklamasi Kemerdekaan pada 17 Agustus 1945, 
                 kondisi di Indonesia masih belum stabil. Di banyak wilayah, pasukan 
@@ -86,19 +103,51 @@ const App = () => {
             />
           </section>
 
-          <section className={styles.paddingYp}>
+          <section className={`${styles.paddingY} mx-6 md:px-0`}>
+            <h1 className={`${styles.heading1} text-center text-accent`}>
+              Awal Konflik
+            </h1>
 
+            <SimplePage
+              alignDirection={styles.flexStart}
+              placementDesc="-right-[150px]"
+              img={image6}
+              title="03. Ultimatum Sekutu"
+              description={`Sekutu mulai memasuki Bandung pada akhir tahun 1945. Mereka 
+              ingin menguasai kota Bandung dan melucuti senjata pejuang Indonesia, yang 
+              menimbulkan ketegangan antara rakyat Indonesia dan pasukan Sekutu.`}
+            />
+
+            <SimplePage
+              alignDirection={styles.flexEnd}
+              placementDesc=" -left-[150px]"
+              img={image3}
+              title="04. Dilema Pejuang"
+              description={`Pada awal Maret 1946, Sekutu mengeluarkan ultimatum kepada para pejuang dan 
+              warga Bandung agar mengosongkan kota bagian selatan dalam waktu 24 jam. Jika tidak, 
+              mereka mengancam akan menggunakan kekuatan militer.`}
+            />
           </section>
 
-          <section className={`${styles.marginX} ${styles.paddingY}`}>
-            <h1 className={`${styles.heading1} text-center mb-12`}>
+          <motion.section ref={ref} className={styles.paddingY}>
+            <h1 className={`${styles.heading1} text-center text-accent`}>
+              Peristiwa Bandung Lautan Api
+            </h1>
+            <ClimaxPage />
+          </motion.section>
+
+          <section
+            className={`${styles.marginX} ${styles.paddingY}`}
+            id="figure"
+          >
+            <h1 className={`${styles.heading1} text-center mb-12 text-accent`}>
               Tokoh-Tokoh Penting
             </h1>
-            <RoundedPage />
+            <FigurePage />
           </section>
 
-          <section>
-            <Horizontal />
+          <section className={styles.paddingY}>
+            <ConclusionPage />
           </section>
         </main>
       </ReactLenis>
