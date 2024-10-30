@@ -21,13 +21,13 @@ const SectionRound = ({rowReverse, imageDocs, roundedImg, roundedText, shadowPla
         <img
           src={imageDocs}
           alt="Dokumentasi Bandung Lautan Api"
-          className={`${roundedImg} w-full md:h-[25rem]`}
+          className={`${roundedImg} w-full md:h-[25rem] border-2 border-textColor`}
         />
       </div>
 
       <div className={`absolute ${shadowPlace} w-[300px] h-[300px] bg-accent blur-[120px]`} />
 
-      <div className={`${roundedText} border-2 border-black p-3 md:absolute md:w-1/3 md:top-1/3 right-[8rem] bg-backgroundColor`}>
+      <div className={`${roundedText} border-2 border-textColor p-3 md:absolute md:w-1/3 md:top-1/3 right-[8rem] bg-backgroundColor`}>
         <h1 className={styles.heading4}>{title}</h1>
         <p className="mt-2">{description}</p>
       </div>

@@ -29,7 +29,7 @@ const Header = () => {
       }}
       className="fixed w-full z-10 my-4 flex justify-center"
     >
-      <div className="flex w-fit rounded-full border-2 border-black bg-backgroundColor">
+      <div className="flex w-fit rounded-full border-2 border-textColor bg-backgroundColor">
         <Tabs setPosition={setPosition}>Home</Tabs>
         <Tabs setPosition={setPosition}>Story</Tabs>
         <Tabs setPosition={setPosition}>Gallery</Tabs>
@@ -78,7 +78,7 @@ const Cursor = ({ position }: CursorProps) => {
   return (
     <motion.li
       animate={position}
-      className="absolute z-0 h-7 rounded-full w-36 bg-black md:h-12"
+      className="absolute z-0 h-7 rounded-full w-36 bg-textColor md:h-12"
     />
   );
 };

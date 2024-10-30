@@ -1,8 +1,9 @@
-import image1 from "../img/download.jpeg"
-import image2 from "../img/download(2).jpeg"
-import image3 from "../img/download(3).jpeg"
-import image4 from "../img/download(4).jpeg"
-import image5 from "../img/download(5).jpeg"
+import image1 from "../img/dokumentasiImage1.jpg"
+import image2 from "../img/dokumentasiImage2.jpeg"
+import image3 from "../img/dokumentasiImage3.jpeg"
+import image4 from "../img/dokumentasiImage4.jpeg"
+import image5 from "../img/dokumentasiImage5.jpeg"
+import image6 from "../img/dokumentasiImage6.jpeg"
 import illustrasi from "../img/ilustrasiBandung.jpeg"
 import MuhTohha from "../img/Muhammad_Toha.jpg"
 import AbdulHaris from "../img/Kolonel Abdul Haris Nasution.jpeg"
@@ -15,6 +16,7 @@ export {
     image3,
     image4,
     image5,
+    image6,
     illustrasi,
     MuhTohha,
     AbdulHaris,

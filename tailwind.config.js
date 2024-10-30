@@ -5,10 +5,10 @@ export default {
     extend: {
       colors: {
         primary: "#8B0000",
-        secondary: "#5D3A00",
-        backgroundColor: "#FFF5E1",
-        accent: "#FF4500",
-        highlight: "#FFD700",
+        secondary: "#CC3700",
+        backgroundColor: "#1A1A1A",
+        accent: "#CCAA00",
+        textColor: "#E0E0E0",
       },
       fontFamily: {
         Playfair: ["Playfair Display", "serif"],
