@@ -1,16 +1,13 @@
-import { delay, motion, useAnimate } from "framer-motion";
+import { motion, useAnimate } from "framer-motion";
 import { FaFire } from "react-icons/fa";
-import React, { useEffect } from "react";
-import { styles } from "../helper";
+import { useEffect } from "react";
 
 const Preload = () => {
   const [scope] = useAnimate();
 
   useEffect(() => {
-    // Disable scrolling when the component mounts
     document.body.style.overflow = 'hidden';
 
-    // Re-enable scrolling when the component unmounts
     return () => {
       document.body.style.overflow = 'visible';
     };

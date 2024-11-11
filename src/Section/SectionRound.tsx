@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-import { ilustrasi1, image1, styles, video } from "../helper";
-import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import { styles } from "../helper";
 
 type SectionRoundRightProps = {
   rowReverse: string;

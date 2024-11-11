@@ -1,5 +1,4 @@
-import React from "react";
-import { MuhTohha, styles, TokohPenting } from "../helper";
+import { styles, TokohPenting } from "../helper";
 
 const FigurePage = () => {
   return (

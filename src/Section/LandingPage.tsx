@@ -1,4 +1,3 @@
-import React from 'react'
 import { ilustrasi3, styles } from '../helper'
 
 const LandingPage = () => {

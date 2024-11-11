@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Header from "./components/Header";
 import ParallaxPage from "./Section/ParallaxPage.tsx";
 import ReactLenis from "lenis/react";

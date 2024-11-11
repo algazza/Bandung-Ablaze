@@ -4,7 +4,7 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { ilustrasi1, image1, image2, image3, image4 } from "../helper";
 
 const SECTION_HEIGHT = 1500;

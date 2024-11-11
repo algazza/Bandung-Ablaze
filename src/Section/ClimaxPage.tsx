@@ -1,7 +1,4 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { image4, styles, video } from "../helper";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { image4, styles } from "../helper";
 
 const ClimaxPage = () => {
   return (
