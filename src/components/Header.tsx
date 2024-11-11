@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import React, { useRef, useState } from "react";
-// import { GrBold } from "react-icons/gr";
 import { FaFire } from "react-icons/fa";
 
 type TabsProps = {
@@ -21,12 +20,6 @@ const Header = () => {
     width: 0,
     opacity: 0,
   });
-    const handleClickScroll = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <ul
